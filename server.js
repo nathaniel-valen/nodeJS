@@ -14,7 +14,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// Gunakan express.static middleware untuk serve file statis
+// express.static middleware untuk serve file statis
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
@@ -24,8 +24,6 @@ app.get('/', (req, res) => {
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    // Autentikasi disini (misalnya, periksa username dan password di database)
-    // Contoh sederhana tanpa database:
     if (username === 'asd' && password === 'asd') {
         req.session.loggedin = true;
         req.session.username = username;
